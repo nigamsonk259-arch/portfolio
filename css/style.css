@@ -3,10 +3,64 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: sans-serif;
-    background-color: black;
+    scroll-behavior: smooth;
+   
 }
+
+body{
+    background: url('3bac.webp');
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    padding-top: 100px;
+}
+
+/****************************************************************/
+@media (max-width:480px) {
+    nav{
+        justify-content: flex-start;
+    }
+    nav> ul{
+display: none;
+    }
+   nav> .icons{
+
+    } 
+}
+
+/*--------------------------------call---------------------------*/
+.call-btn{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: green;
+    color: white;
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: 0.3s ease;
+}
+
+.call-btn:hover{
+    background-color: darkgreen;
+    transform: scale(1.1);
+}
+/*---------------------------------------------------------*/
 nav{
     background-color: black;
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   z-index: 999;
     width: 100%;
     height: 100px;
     display: flex;
@@ -14,11 +68,15 @@ nav{
     justify-content: space-evenly;
 }
 .logo{
-    height: 100px;
-    width: 10%;
+    height: 90px;
+    width: 50px;
+    object-fit: contain;
+    
+    
     /* background-color: green; */
     /* margin-left: 10px auto; */
 }
+
 nav ul{
     height: 100px;
     width: 70%;
@@ -45,7 +103,7 @@ nav ul a li{
     position: relative;
 }
 nav ul a li:hover{
-    background-color: gray;
+    background-color: rgb(41, 80, 41);
     border-radius: 5px;
 }
 nav ul a li::after{
@@ -60,7 +118,7 @@ nav ul a li::after{
 }
 nav ul a li:hover::after{
     
-    background-color: crimson;
+    background-color: rgb(41, 80, 41);
     height: 3px;
     width: 80%;
     transition: 2s;
@@ -85,14 +143,28 @@ nav ul a li:hover::after{
 font-size: 40px;
     
 }
+.icc1{
+    color: blue;
+}
+.icc2{
+    color: purple;
+}
+.icc3{
+    color: green;
+}
+.icc4{
+    color: blue;
+}
 .icons i{
     background-color: white;
 }
+
 /* min----head-------------------------------------------------------------- */
 .about{
+    /* padding-top: 0px; */
     height: 500px;
-    width: 100%;
-    background-color:;
+    width: 95%;
+    /* background-color:; */
     display: flex;
     border-top: 1px solid gray;
 }
@@ -110,9 +182,9 @@ font-size: 40px;
     margin: 0px auto;
     color: crimson;
 }
-.about1 p{
+.about1 h4{
     text-align: justify;
-    
+    margin-left: 50px;
     color: white;
     padding-left: 20px;
     padding-right: 20px;
@@ -130,11 +202,11 @@ font-size: 40px;
 }
 
 .one{
-    animation: typing 2s steps(25) forwards infinite;
+    animation: typing 3s steps(25) forwards infinite;
     
 }
 .two{
-    animation: typing 2s steps(25) forwards infinite;
+    animation: typing 3s steps(25) forwards infinite;
     animation-delay: 2.5s;
     
 }
@@ -143,7 +215,7 @@ font-size: 40px;
     to{
         width: 100%;
         transition: 3s;
-        color: green;
+        color: white;
     }
     
 }
@@ -289,7 +361,8 @@ font-size: 40px;
 }
 .abt h1{
     text-align: center;
-    color: crimson;
+    color: black;
+    font-size: 2.5rem;
 }
 .abt hr{
     margin: 0px auto;
@@ -297,7 +370,7 @@ font-size: 40px;
     margin-bottom: 20px;
     width: 80%;
     height: 5px;
-    background-color: crimson;
+    background-color: black;
 }
 .abt p{
     margin: 0px auto;
@@ -305,33 +378,43 @@ font-size: 40px;
     color: white;
     width: 90%;
 }
+.point
+{
+    color: crimson;
+    font-size: 15px;
+    font-weight: bold;
+}
+b{
+    font-size: 20px;
+}
 /*-------------------------skills----------------------*/
 /**********************************/
 #skills h1{
     margin-top: 20px;
-    color: crimson;
+    color: black;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 #skills hr{
     height: 5px;
     width: 80%;
-    background-color: crimson;
+    background-color: black;
     margin: 0 auto;
     border-radius: 10px;
-    border: none;
+    /* border: none; */
 }
 
 .skill-outer
 {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
-    background-color: rgb(173, 236, 255);
+    background-color: rgb(7, 23, 26);
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 10px;
     margin-top: 20px;
+    border-radius: 10px;
 
 }
 
@@ -345,57 +428,71 @@ font-size: 40px;
     margin-top: 20px;
     justify-content: center;
     transition: .3s ease-in-out;
+    animation-name: skil;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
 }
 .skill-box img{
     height: 80%;
     width: 80%;
     object-fit: contain;
 }
-.skill-box:hover{
 
-    transform: translateY(-10px);
+@keyframes skil {
+    to{
+transform: translateY(-10px);
     box-shadow: 5px 5px 5px 5px rgb(0, 122, 122);
+    /* background-color: crimson; */
+    /* transform: scale(1.1); */
+
+    }
+    
 }
 /*-------------------------services----------------------*/
 
 #services h1{
     margin-top: 20px;
-    color: crimson;
+    color: black;
     text-align: center;
     font-size: 3rem;
 }
 #services hr{
     height: 5px;
     width: 80%;
-    background-color: crimson;
+    background-color: black;
     margin: 0 auto;
     border-radius: 10px;
-    border: none;
+   
 }
 
 .service-outer
 {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
-    background-color: aqua;
+    background-color: rgb(1, 15, 15);
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 10px;
     margin-top: 20px;
+    border-radius: 30px;
 
 }
 
 .service-box{
-    height: 200px;
-    /* width: 25%; */
-    background: linear-gradient(rgb(0, 141, 134),rgba(122, 0, 122, 0.85));
+    height: 180px;
+    width: 90%;
+    margin: 0px auto;
     border-radius: 10px;
     display: grid;
     flex-direction: row;
     margin-top: 20px;
     justify-content: center;
+  
     transition: .3s ease-in-out;
+    animation-name: serv;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
 }
 .service-box h1{
  text-align: center;
@@ -410,36 +507,47 @@ text-align: center;
 color: white;
 }
 
-.service-box:hover{
 
-opacity: .6;
+@keyframes serv {
+    to{
+  background-color: rgb(3, 19, 22);
+    transform: scale(1.1);
+    /* transform: translateY(-10px); */
+
+    }
+    
+}
+.servimg{
+    height: 150px;
+    width: 300px;
 }
 
 /*-------------------------latest project----------------------*/
 #projects h1{
     margin-top: 20px;
-    color: crimson;
+    color: black;
     text-align: center;
     font-size: 3rem;
 }
 #projects hr{
     height: 5px;
     width: 80%;
-    background-color: crimson;
+    background-color: black;
     margin: 0 auto;
     border-radius: 10px;
-    border: none;
+   
 }
 
 .projects-outer
 {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
-    background-color: aqua;
+    background-color: rgb(1, 109, 109);
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 10px;
+    border-radius: 10px;
     margin-top: 20px;
 
 }
@@ -447,31 +555,20 @@ opacity: .6;
 .project-box{
     height: 200px;
    
-    background-color: aqua;
+    background-color: rgb(1, 15, 15);
     border-radius: 10px;
     display: grid;
     flex-direction: row;
     margin-top: 20px;
-    justify-content: center;
-    transition: .3s ease-in-out;
+    justify-content: center;display: flex;
+    align-items: center;
+    
+    
 }
-.project-box h1{
- text-align: center;
- color: white;
-}
-.project-box h2{
-text-align: center;
-color: white;
-}
-.project-box p{
-text-align: center;
-color: white;
-}
-
 .project-box:hover{
-
-opacity: .6;
+    background-color: rgb(15, 34, 34);
 }
+
 
 /*-------------------------latest project----------------------*/
 /* #contacts{
@@ -482,17 +579,17 @@ opacity: .6;
 } */
 #contacts h1{
     margin-top: 20px;
-    color: crimson;
+    color: black;
     text-align: center;
     font-size: 3rem;
 }
 #contacts hr{
     height: 5px;
     width: 80%;
-    background-color: crimson;
+    background-color: black;
     margin: 0 auto;
     border-radius: 10px;
-    border: none;
+   
 }
 .contact-outer
 {
@@ -500,7 +597,7 @@ opacity: .6;
 height: 500px;
     width: 80%;
     margin: 10px auto;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     display: flex;
 
 }
@@ -508,22 +605,73 @@ height: 500px;
 height: 480px;
     width: 45%;
     margin: 10px auto;
-    background-color: red;
+    /* background-color: red; */
+    border: 4px solid rgb(3, 13, 17);
 
 }
 .contacts2{
     height: 480px;
     width: 45%;
     margin: 10px auto;
-    background-color: orange;
+    /* background-color: orange; */
     display: grid;
     grid-template-columns: repeat(1,1fr);
     align-items: center;
     justify-content: center;
 }
-form{
+.form1{
     margin: 0px auto;
+    height: 480px;
+    width: 90%;
+    background-color: rgb(33, 90, 82); 
+    border: 2px pink;
+    /* box-shadow: 10px 10px black; */
+
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    padding-left: 20px;
+
+}
+.frm{
+ background-color: white;
+ border: none;
+}
+
+
+input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  height: 30px;
+  width: 80%;
+}
+textarea{
+    height: 100px;
+  width: 80%;
+}
+button{
+    height: 50px;
+    width: 150px;
+    background-color: blue;
+    color: white;
 }
 .footer{
-    height: ;
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.footer p{
+color: white;
+}
+.footer p p{
+color: white;
 }
