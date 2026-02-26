@@ -4,10 +4,11 @@
     box-sizing: border-box;
     font-family: sans-serif;
     scroll-behavior: smooth;
-   
 }
 
 body{
+    
+    overflow-x: hidden;
     background: url('3bac.webp');
     background-position: cover;
     background-repeat: no-repeat;
@@ -16,20 +17,7 @@ body{
 .container{
     padding-top: 100px;
 }
-
-/****************************************************************/
-@media (max-width:480px) {
-    nav{
-        justify-content: flex-start;
-    }
-    nav> ul{
-display: none;
-    }
-   nav> .icons{
-
-    } 
-}
-
+********/
 /*--------------------------------call---------------------------*/
 .call-btn{
     position: fixed;
@@ -103,8 +91,10 @@ nav ul a li{
     position: relative;
 }
 nav ul a li:hover{
-    background-color: rgb(41, 80, 41);
+    /* background-color: rgb(41, 80, 41); */
+    border: 2px solid white;
     border-radius: 5px;
+    box-shadow: 10px 5px 10px white;
 }
 nav ul a li::after{
     
@@ -156,22 +146,22 @@ font-size: 40px;
     color: blue;
 }
 .icons i{
-    background-color: white;
+    /* background-color: white; */
 }
 
 /* min----head-------------------------------------------------------------- */
 .about{
     /* padding-top: 0px; */
     height: 500px;
-    width: 95%;
+    width: 100%;
     /* background-color:; */
     display: flex;
-    border-top: 1px solid gray;
+    /* border-top: 1px solid gray; */
 }
 .about1{
     height: 500px;
     width: 50%;
-    background-color:;
+    /* background-color:; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -229,7 +219,62 @@ font-size: 40px;
     position: relative;
     
 }
-.uipic
+.about2{
+    height: 500px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orbit{
+    position: relative;
+    width: 400px;
+    height: 500px;
+}
+
+.uipic{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Small Images */
+.ui{
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    position: absolute;
+    top: 43%;
+    left: 40%;
+    /* right: 0%; */
+    transform-origin: -180px center;
+    animation: rotateOrbit 8s linear infinite;
+}
+
+/* Different delays for circle spread */
+.ui1{ animation-delay: 0s; }
+.ui2{ animation-delay: -1s; }
+.ui3{ animation-delay: -2s; }
+.ui4{ animation-delay: -3s; }
+.ui5{ animation-delay: -4s; }
+.ui6{ animation-delay: -5s; }
+.ui7{ animation-delay: -6s; }
+.ui8{ animation-delay: -7s; }
+
+@keyframes rotateOrbit{
+    from{
+        transform: rotate(0deg) translateX(200px) rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg) translateX(200px) rotate(-360deg);
+    }
+}
+/* .uipic
 {
     height : 300px;
     width : 250px; 
@@ -353,7 +398,7 @@ font-size: 40px;
         transform: translateX(-10px);
     }
     
-}
+} */
 /*----------------------about me--------------------------*/
 
 .abt{
